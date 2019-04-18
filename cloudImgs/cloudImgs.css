@@ -1,0 +1,130 @@
+
+/* 样式覆盖 */
+.panel{
+	margin:100px auto 0px;
+	height:auto;
+	width:506px;
+}
+.panel-title{
+	padding-left:10px;
+	font-size:16px;
+}
+.panel-header {
+	border-width:5px;
+	border-bottom:0px;
+}
+.datagrid-wrap.panel-body{
+	position:relative;
+	border-width:5px;
+	border-top:0px;
+	heiht:auto !important;
+}
+
+.datagrid-toolbar{
+	border:0 none;
+	background:none;
+	height:100%;
+}
+.datagrid-pager.pagination{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	width:100%;
+}
+.pagination-page-list{
+	margin:0px;
+	padding:0px;
+	width:70%;
+	height:28px;
+	padding-left:6px;
+	background:#fff;
+}
+/* 清除默认样式*/
+html,body{
+	margin:0px;
+	padding:0px;
+}
+/*新添加的节点样式 */
+#cloudImg{
+	position:relative;
+}
+.span-cancel{
+	position:absolute;
+	top:-20px;
+	right:0px;
+	z-index:99;
+}
+.img-box{
+	height:100%;
+	width:100%;
+	overflow:scroll;
+}
+.img-box img{
+	height:auto;
+	width:100%;
+}
+.play-bar{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	width:100%;
+	height:64px;
+	box-sizign:border-box;
+	color:#fff;
+	display:flex;
+	background:#F4F4F4;
+}
+.play-bar-left{
+	height:100%;
+	width:20%;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	box-sizing:border-box;
+	position:relative;
+}
+.play-bar-left:after{
+	display: block;
+	content:'';
+	position:absolute;
+	right:0px;
+	top:12px;
+	height:60%;
+	width:1px;
+	background:#95B8E7;
+}
+.play-bar-right{
+	display: flex;
+	align-items:center;
+	width:80%;
+	box-sizing:border-box;
+	padding:0px 24px;
+	position:relative;
+}
+.play-not{
+	background: url('./3.png') no-repeat 0px -252px;
+    width: 50px;
+    height: 50px;
+    margin: 0px 3px 0px 0px;
+}
+.play-rewind{
+	background: url('./3.png') no-repeat 0px -188px;
+	width: 32px;
+	height: 32px;
+	margin: 0px 3px 0px 18px;
+}
+.play-fastForward{
+	background: url('./3.png') no-repeat 0px -100px;
+	width: 32px;
+	height: 32px;
+	margin: 0px 3px 0px 3px;
+}
+.play-not:hover, .play-rewind:hover, .play-fastForward:hover{
+	cursor: pointer;
+}
+.play-title{
+	position:absolute;
+	color:#333;
+	right:30px;
+	font-size:16px;
+}

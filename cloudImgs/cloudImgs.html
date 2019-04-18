@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="./easyui.css">
+		<link rel="stylesheet" type="text/css" href="./icon.css">
+		<link rel="stylesheet" type="text/css" href="./color.css">
+		<link rel="stylesheet" type="text/css" href="./demo.css">
+		
+		
+		
+		<link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/color.css">
+		<link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/demo/demo.css">
+		
+		<link rel="stylesheet" type="text/css" href="./cloudImgs.css">
+	</head>
+	<body>
+		<!-- <div class="cloudImgs"></div> -->
+		<div id="dg" title="卫星云图" class="easyui-datagrid" style="width:920px;height:auto;margin:200px auto;"
+			toolbar="#cloudImg">
+			<span class="easyui-linkbutton span-cancel" iconCls="icon-cancel"></span>
+		</div>
+		<div id="cloudImg">
+			
+			<div class="img-box">
+				<img src="http://www.scsweather.com/FY4ProductData/2019/04/16/FY4A_ETCC_ACHN_201904160650_min.jpg"/>
+			</div>
+			<div class="play-bar">
+				<div class="play-bar-left">
+					<select class="pagination-page-list product-select">
+						<option value="58378">真彩</option>
+						<option value="58379">红外</option>
+						<option value="58380">可见光</option>
+						<option value="58381">水汽</option>
+					</select>
+				</div>
+				<div class="play-bar-right">
+					<p class="play-not"></p>
+					<p class="play-rewind"></p>
+					<p class="play-fastForward"></p>
+					<span class="play-title"></span>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="./jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="./jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="./cloudImgs.js"></script>	
+	</body>
+</html>
