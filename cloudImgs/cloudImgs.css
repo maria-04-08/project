@@ -45,13 +45,18 @@ html,body{
 	padding:0px;
 }
 /*新添加的节点样式 */
+.cloudImgs{
+	width:920px;
+	margin:0px auto;
+	position:relative;
+}
 #cloudImg{
 	position:relative;
 }
 .span-cancel{
 	position:absolute;
-	top:-20px;
-	right:0px;
+	top:5px;
+	right:5px;
 	z-index:99;
 }
 .img-box{

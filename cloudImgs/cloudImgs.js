@@ -1,7 +1,7 @@
 
 $(function(){ 
 	var play = false, imgArray = [], dataArr = [], index = 0, timer = '' ,requestUrl = 'http://www.scsweather.com/Home/GetFy4Product?productCode=';
-	$(".play-no").hover(function(){
+	$(".play-not").hover(function(){
 		if(play){ //暂停
 			$('.play-not').css('background-position','0 -50px');
 		}else{ //播放开始 
@@ -59,7 +59,9 @@ $(function(){
 			changeImgs();
 		}
 	})
-	
+	$('.span-cancel').click(function(){
+		$('.cloudImgs').css('display','none');
+	})
 	
 	
 	//初始化数据
@@ -69,6 +71,8 @@ $(function(){
 	$('.product-select').change(function(){ 
 		var productCode =$(this).children('option:selected').val();//这就是selected的值 
 		_url = requestUrl + productCode;
+		play = false;
+		$('.play-not').css('background-position','0 -252px');
 		getData(_url);
 		clearInterval(timer);
 		index = 0;
