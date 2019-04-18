@@ -1,8 +1,8 @@
 
 /* 样式覆盖 */
 .panel{
-	margin:100px auto 0px;
-	height:auto;
+	margin:0px auto 0px;
+	height:720px;
 	width:506px;
 }
 .panel-title{
@@ -49,23 +49,18 @@ html,body{
 	width:920px;
 	margin:0px auto;
 	position:relative;
+	height:720px;
 }
 #cloudImg{
+	height:720px;
 	position:relative;
 }
-.span-cancel{
-	position:absolute;
-	top:5px;
-	right:5px;
-	z-index:99;
-}
 .img-box{
-	height:100%;
+	height:656px;
 	width:100%;
-	overflow:scroll;
 }
 .img-box img{
-	height:auto;
+	height:100%;
 	width:100%;
 }
 .play-bar{
@@ -132,4 +127,19 @@ html,body{
 	color:#333;
 	right:30px;
 	font-size:16px;
+}
+.icon-list{
+	position:absolute;
+	top:-12px;
+	right:34px;
+}
+.span-icon{
+	position:absolute;
+	top:5px;
+	right:5px;
+	z-index:99;
+}
+.span-add{
+	position:absolute;
+	right:40px;
 }

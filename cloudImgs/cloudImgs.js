@@ -1,5 +1,39 @@
 
 $(function(){ 
+	var cloudImg = `
+		<div class="cloudImgs">
+			<p class="icon-list">
+				<span class="easyui-linkbutton span-icon span-add" iconCls="icon-add"></span>
+				<span class="easyui-linkbutton span-icon span-less" iconCls="icon-remove"></span>
+			</p>
+			<span class="easyui-linkbutton span-icon span-cancel" iconCls="icon-clear"></span>
+			<div id="dg" title="卫星云图" class="easyui-datagrid" style="width:920px;height605px;margin:200px auto;"
+				toolbar="#cloudImg">
+			</div>
+		</div>
+		<div id="cloudImg">
+			<div class="img-box">
+				<img id="cloud-img" src="http://www.scsweather.com/FY4ProductData/2019/04/16/FY4A_ETCC_ACHN_201904160650_min.jpg"/>
+			</div>
+			<div class="play-bar">
+				<div class="play-bar-left">
+					<select class="pagination-page-list product-select">
+						<option value="58378">真彩</option>
+						<option value="58379">红外</option>
+						<option value="58380">可见光</option>
+						<option value="58381">水汽</option>
+					</select>
+				</div>
+				<div class="play-bar-right">
+					<p class="play-not"></p>
+					<p class="play-rewind"></p>
+					<p class="play-fastForward"></p>
+					<span class="play-title"></span>
+				</div>
+			</div>
+		</div>`;
+	$('body').append(cloudImg);
+	$.parser.parse(); //对整个页面重新渲染
 	var play = false, imgArray = [], dataArr = [], index = 0, timer = '' ,requestUrl = 'http://www.scsweather.com/Home/GetFy4Product?productCode=';
 	$(".play-not").hover(function(){
 		if(play){ //暂停
@@ -62,7 +96,46 @@ $(function(){
 	$('.span-cancel').click(function(){
 		$('.cloudImgs').css('display','none');
 	})
-	
+	$('.span-add').click(function(){
+		zoomin();
+	})
+	$('.span-less').click(function(){
+		zoomout();
+	})
+	function zoomin(){
+
+		var myImg = document.getElementById("cloud-img");
+		
+		var currWidth = myImg.clientWidth;
+		
+		if(currWidth == 500){
+
+    	alert("已经达到最大尺寸.");
+
+ 		} else{
+
+                myImg.style.width = (currWidth + 50) + "px";
+
+ 		}
+	}
+    
+
+        function zoomout(){
+
+            var myImg = document.getElementById("cloud-img");
+
+            var currWidth = myImg.clientWidth;
+
+            if(currWidth == 50){
+
+                alert("已经达到最小尺寸.");
+
+			} else{
+
+                myImg.style.width = (currWidth - 50) + "px";
+
+ 			}
+        }
 	
 	//初始化数据
 	var _url = requestUrl + '58378';
@@ -93,15 +166,19 @@ $(function(){
 	function playImgs(){
 		timer = setInterval(function(){
 			// console.log('data=---------'+dataArr[index].ProductTime);
-		　　if(index>=imgArray.length){
+			if(index>=imgArray.length-1){
 		　　　　index=0;
 		　　}
 		　　else{
 		　　　　index++;
 		　　}
+		if(dataArr[index]){
 			$('.play-title').text(dataArr[index].ProductTime);
-			　　$(".img-box img").attr("src",imgArray[index]);
-			},600);
+		}else{
+			console.log(index);
+		}
+		　　$(".img-box img").attr("src",imgArray[index]);
+		},600);
 	}
 	function changeImgs(){
 		$('.play-title').text(dataArr[index].ProductTime);
