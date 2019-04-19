@@ -2,8 +2,8 @@
 /* 样式覆盖 */
 .panel{
 	margin:0px auto 0px;
-	height:720px;
-	width:506px;
+	/* height:720px; */
+	width:920px;
 }
 .panel-title{
 	padding-left:10px;
@@ -48,20 +48,24 @@ html,body{
 .cloudImgs{
 	width:920px;
 	margin:0px auto;
-	position:relative;
-	height:720px;
+	position:fixed;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
 }
 #cloudImg{
 	height:720px;
 	position:relative;
 }
 .img-box{
-	height:656px;
+	height:100%;
 	width:100%;
 }
 .img-box img{
-	height:100%;
-	width:100%;
+	width: auto;  
+    height: auto;  
+    max-width: 100%;  
+    max-height: 100%; 
 }
 .play-bar{
 	position:absolute;

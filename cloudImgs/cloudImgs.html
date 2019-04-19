@@ -3,32 +3,24 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
-		<link rel="stylesheet" type="text/css" href="./easyui.css">
-		<link rel="stylesheet" type="text/css" href="./icon.css">
-		<link rel="stylesheet" type="text/css" href="./color.css">
-		<link rel="stylesheet" type="text/css" href="./demo.css">
-		
-		
-		
 		<link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/default/easyui.css">
 		<link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/icon.css">
-		<link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/color.css">
-		<link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/demo/demo.css">
 		
 		<link rel="stylesheet" type="text/css" href="./cloudImgs.css">
-		<script type="text/javascript" src="./jquery-1.9.1.min.js"></script>
-		<script type="text/javascript" src="./jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+		
 	</head>
 	<body>
-		<!--<div class="cloudImgs">
-			<span class="easyui-linkbutton span-cancel" iconCls="icon-cancel"></span>
-			<div id="dg" title="卫星云图" class="easyui-datagrid" style="width:920px;height:auto;margin:200px auto;"
+		<div class="cloudImgs">
+			<span class="easyui-linkbutton span-icon span-cancel" iconCls="icon-clear"></span>
+			<div id="dg" title="卫星云图" class="easyui-datagrid" style="width:920px;height:auto;"
 				toolbar="#cloudImg">
 			</div>
 		</div>
 		<div id="cloudImg">
 			<div class="img-box">
-				<img src="http://www.scsweather.com/FY4ProductData/2019/04/16/FY4A_ETCC_ACHN_201904160650_min.jpg"/>
+				<img id="cloud-img" src=""/>
 			</div>
 			<div class="play-bar">
 				<div class="play-bar-left">
@@ -46,9 +38,15 @@
 					<span class="play-title"></span>
 				</div>
 			</div>
-		</div>-->
+		</div>
+		<!-- <div class="cloudImg-box" style="display: none;"></div>
+		<button class="showDom">展示卫星云图按钮</button>
 		
-		
+		<script>
+			$('.showDom').click(function(){
+				$('.cloudImg-box').css('display','block');
+			}) -->
+		</script>
 		<script type="text/javascript" src="./cloudImgs.js"></script>	
 	</body>
 </html>
