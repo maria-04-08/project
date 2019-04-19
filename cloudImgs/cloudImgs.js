@@ -1,38 +1,14 @@
 
 $(function(){ 
-	var cloudImg = `
-		<div class="cloudImgs">
-			<span class="easyui-linkbutton span-icon span-cancel" iconCls="icon-clear"></span>
-			<div id="dg" title="卫星云图" class="easyui-datagrid" style="width:920px;height:auto;"
-				toolbar="#cloudImg">
-			</div>
-		</div>
-		<div id="cloudImg">
-			<div class="img-box">
-				<img id="cloud-img" src=""/>
-			</div>
-			<div class="play-bar">
-				<div class="play-bar-left">
-					<select class="pagination-page-list product-select">
-						<option value="58378">真彩</option>
-						<option value="58379">红外</option>
-						<option value="58380">可见光</option>
-						<option value="58381">水汽</option>
-					</select>
-				</div>
-				<div class="play-bar-right">
-					<p class="play-not"></p>
-					<p class="play-rewind"></p>
-					<p class="play-fastForward"></p>
-					<span class="play-title"></span>
-				</div>
-			</div>
-		</div>`;
-	$('.cloudImg-box').append(cloudImg);
-	$.parser.parse(); //对整个页面重新渲染
 	
+	$.parser.parse(); //对整个页面重新渲染
 	var play = false, imgArray = [], dataArr = [], index = 0, timer = '' ,
 	requestUrl = 'http://www.scsweather.com/Home/GetFy4Product?productCode=';
+	
+	//展示卫星云图
+	$('.Hold-all-item').click(function(){
+		$('.cloud-box').css('display','block');
+	})
 	
 	//hover效果
 	elHover(0,$(".play-not"),'0 -50px','0 -302px','0 0','0 -252px');
@@ -56,8 +32,11 @@ $(function(){
 	
 	//点击后退图标
 	$(".play-rewind").click(function(){
-		if(index == 0 || index < 0) return;
-		index = (index - 2) < 0? index : index -2;
+		if(index == 0 || index < 0){
+			index = dataArr.length;
+		}else{
+			index = (index - 2) < 0? index : index -2;
+		}
 		if(play){ //开始播放
 			
 		}else{
@@ -66,8 +45,11 @@ $(function(){
 	})
 	//点击前进图标
 	$(".play-fastForward").click(function(){
-		if(index >= dataArr.length ) return;
-		index = (index + 1) > dataArr.length ? 0 : index + 1;
+		if(index >= dataArr.length ){
+			index = 0;
+		} else{
+			index = (index + 1) > dataArr.length ? 0 : index + 1;
+		}
 		if(play){ //开始播放
 			
 		}else{
@@ -77,7 +59,7 @@ $(function(){
 	
 	//点击关闭图标
 	$('.span-cancel').click(function(){
-		$('.cloudImg-box').css('display','none');
+		$('.cloud-box').css('display','none');
 	})
 	
 	function elHover(num,el,position1,position2,position3,position4){
@@ -110,6 +92,21 @@ $(function(){
 	var _url = requestUrl + '58378';
 	getData(_url);
 	
+	//boostrap下拉框选择
+	$('.play-bar').click(function(e){
+		var target = $(event.target)
+		if(target.is($('a'))){
+			$('.dropup button .text').text(target.text());
+			var attr = target.attr('id');
+			_url = requestUrl + attr;
+			play = false;
+			$('.play-not').css('background-position','0 -252px');
+			getData(_url);
+			clearInterval(timer);
+			index = 0;
+		}
+	})
+	
 	//选择不同产品加载数据
 	$('.product-select').change(function(){ 
 		var productCode =$(this).children('option:selected').val();//这就是selected的值 
@@ -124,6 +121,7 @@ $(function(){
 		$.get(url,function(data){
 			dataArr = data;
 			imgArray = [];
+			// console.log('返回数据--'+JSON.stringify(data));
 			for(var i=0;i<data.length;i++){
 				data[i].ProductUrl = 'http://www.scsweather.com/' + data[i].ProductUrl;
 				imgArray.push(data[i].ProductUrl);
@@ -146,11 +144,13 @@ $(function(){
 			}else{
 			}
 		　　$(".img-box img").attr("src",imgArray[index]);
-		},600);
+		},2000);
 	}
 	//切换图片
 	function changeImgs(){
-		$('.play-title').text(dataArr[index].ProductTime);
+		if(dataArr[index]){
+			$('.play-title').text(dataArr[index].ProductTime);
+		}
 		$(".img-box img").attr("src",imgArray[index]);
 	}
 }); 

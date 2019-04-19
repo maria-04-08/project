@@ -1,37 +1,37 @@
 
 /* 样式覆盖 */
-.panel{
+.cloud-box .panel{
 	margin:0px auto 0px;
 	/* height:720px; */
-	width:920px;
+	width:1000px;
 }
-.panel-title{
+.cloud-box .panel-title{
 	padding-left:10px;
 	font-size:16px;
 }
-.panel-header {
+.cloud-box .panel-header {
 	border-width:5px;
 	border-bottom:0px;
 }
-.datagrid-wrap.panel-body{
+.cloud-box .datagrid-wrap.panel-body{
 	position:relative;
 	border-width:5px;
 	border-top:0px;
 	heiht:auto !important;
 }
 
-.datagrid-toolbar{
+.cloud-box .datagrid-toolbar{
 	border:0 none;
 	background:none;
 	height:100%;
 }
-.datagrid-pager.pagination{
+.cloud-box .datagrid-pager.pagination{
 	position:absolute;
 	bottom:0px;
 	left:0px;
 	width:100%;
 }
-.pagination-page-list{
+.cloud-box .pagination-page-list{
 	margin:0px;
 	padding:0px;
 	width:70%;
@@ -45,8 +45,11 @@ html,body{
 	padding:0px;
 }
 /*新添加的节点样式 */
+.cloud-box{
+	display: none;
+}
 .cloudImgs{
-	width:920px;
+	width:1000px;
 	margin:0px auto;
 	position:fixed;
 	top:50%;
@@ -62,7 +65,7 @@ html,body{
 	width:100%;
 }
 .img-box img{
-	width: auto;  
+	width: 100%;  
     height: auto;  
     max-width: 100%;  
     max-height: 100%; 
@@ -106,19 +109,19 @@ html,body{
 	position:relative;
 }
 .play-not{
-	background: url('./3.png') no-repeat 0px -252px;
+	background: url('../img/cloud-icon.png') no-repeat 0px -252px;
     width: 50px;
     height: 50px;
     margin: 0px 3px 0px 0px;
 }
 .play-rewind{
-	background: url('./3.png') no-repeat 0px -188px;
+	background: url('../img/cloud-icon.png') no-repeat 0px -188px;
 	width: 32px;
 	height: 32px;
 	margin: 0px 3px 0px 18px;
 }
 .play-fastForward{
-	background: url('./3.png') no-repeat 0px -100px;
+	background: url('../img/cloud-icon.png') no-repeat 0px -100px;
 	width: 32px;
 	height: 32px;
 	margin: 0px 3px 0px 3px;
@@ -146,4 +149,29 @@ html,body{
 .span-add{
 	position:absolute;
 	right:40px;
+}
+.dropup{
+	width:100%;
+	display: flex;
+	justify-content: center;
+}
+.btn-default {
+	width:70%;
+    color: #333;
+    background-color: none !important;
+    border-color: none !important;
+}
+.dropdown-menu>li>a{
+	padding:8px 30px;
+}
+.dropdown-menu .divider{
+	display: none;
+}
+.btn{
+	display: flex;
+	align-items:center;
+	justify-content: space-between;
+}
+.Hold-all-item:hover{
+	cursor:pointer;
 }

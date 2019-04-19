@@ -12,41 +12,44 @@
 		
 	</head>
 	<body>
-		<div class="cloudImgs">
-			<span class="easyui-linkbutton span-icon span-cancel" iconCls="icon-clear"></span>
-			<div id="dg" title="卫星云图" class="easyui-datagrid" style="width:920px;height:auto;"
-				toolbar="#cloudImg">
-			</div>
-		</div>
-		<div id="cloudImg">
-			<div class="img-box">
-				<img id="cloud-img" src=""/>
-			</div>
-			<div class="play-bar">
-				<div class="play-bar-left">
-					<select class="pagination-page-list product-select">
-						<option value="58378">真彩</option>
-						<option value="58379">红外</option>
-						<option value="58380">可见光</option>
-						<option value="58381">水汽</option>
-					</select>
-				</div>
-				<div class="play-bar-right">
-					<p class="play-not"></p>
-					<p class="play-rewind"></p>
-					<p class="play-fastForward"></p>
-					<span class="play-title"></span>
+		<!-- 卫星云图html开始 -->
+		<div class="cloud-box">
+			<div class="cloudImgs">
+				<span class="easyui-linkbutton span-icon span-cancel" iconCls="icon-clear"></span>
+				<div id="dg" title="卫星云图" class="easyui-datagrid" style="width:1000px;height:auto;"
+					toolbar="#cloudImg">
 				</div>
 			</div>
+			<div id="cloudImg">
+				<div class="img-box">
+					<img id="cloud-img" src=""/>
+				</div>
+				<div class="play-bar">
+					<div class="play-bar-left">
+						<div class="dropup">
+						  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="text">真彩</span>
+							<span class="caret"></span>
+						  </button>
+						  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+							<li><a href="#" id="58378">真彩</a></li>
+							<li><a href="#" id="58379">红外</a></li>
+							<li><a href="#" id="58380">可见光</a></li>
+							<li><a href="#" id="58381">水汽</a></li>
+							<li role="separator" class="divider"></li>
+						  </ul>
+						</div>
+					</div>
+					<div class="play-bar-right">
+						<p class="play-not"></p>
+						<p class="play-rewind"></p>
+						<p class="play-fastForward"></p>
+						<span class="play-title"></span>
+					</div>
+				</div>
+			</div>
 		</div>
-		<!-- <div class="cloudImg-box" style="display: none;"></div>
-		<button class="showDom">展示卫星云图按钮</button>
-		
-		<script>
-			$('.showDom').click(function(){
-				$('.cloudImg-box').css('display','block');
-			}) -->
-		</script>
+		<!-- 卫星云图html结束 -->
 		<script type="text/javascript" src="./cloudImgs.js"></script>	
 	</body>
 </html>
